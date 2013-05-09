@@ -1,0 +1,41 @@
+<div class="content">
+	<h2>Redimensionar una imagen</h2>
+
+	<p>
+		Esta herramienta te permite redimensionar una imagen haciendo una consulta hacia una dirección web local que debe contener la dirección web de la imagen a redimensionar y las dimensiones nuevas.
+	</p>
+
+	<p>
+		Es decir:
+	</p>
+
+	<div class="step">
+		%PATH%/to/resize_image?url=<i>dirección web</i>&resize=<i>ancho x altura</i>
+	</div>
+
+	<p>
+		Por ejemplo, si quisieramos redimensionar el Logo de InfoSmart que esta ubicado en <a href="http://resources.infosmart.mx/infosmart/images/logo.png" target="_blank">http://resources.infosmart.mx/infosmart/images/logo.png</a> a las dimensiones <b>100x50</b> la dirección debería ser escrita de esta manera:
+	</p>
+
+	<div class="step">
+		%PATH%/to/resize_image?<b>url</b>=http://resources.infosmart.mx/infosmart/images/logo.png&<b>resize</b>=100x50
+	</div>
+
+	<p>
+		Ahora para usarla en tu aplicación web puedes hacerlo mediante una etiqueta de imagen:
+	</p>
+
+	<div class="step">
+		<?=_c('<img src="%PATH%/to/resize_image?url=http://resources.infosmart.mx/infosmart/images/logo.png&resize=100x50" />')?>
+	</div>
+
+	<p>
+		El ejemplo anterior mostraría:
+	</p>
+
+	<img src="%PATH%/to/resize_image?url=http://resources.infosmart.mx/infosmart/images/logo.png&resize=100x50" />
+
+	<p>
+		<strong class="red">Nota:</strong> Como se puede apreciar en el ejemplo las imágenes con fondo transparente pueden "deformarse".
+	</p>
+</div>

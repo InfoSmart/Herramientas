@@ -1,0 +1,122 @@
+<div class="content">
+	<div class="c1">
+		<nav>
+			<a href="#working">Funcionamiento</a>
+			<a href="#ideas">Ideas de uso</a>
+			<a href="#params">Parámetros</a>
+			<a href="#examples">Ejemplos de uso</a>
+			<a href="#notes">Notas</a>
+		</nav>
+
+		<div class="center" style="margin-top: 30px">
+			{$twitter}
+		</div>
+
+		<div class="center" style="margin-top: 30px">
+			<!-- BEGIN SMOWTION TAG - 160x600 - DO NOT MODIFY -->
+			<script type="text/javascript"><!--
+			smowtion_size = "160x600";
+			smowtion_section = "3561412";
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://ads.smowtion.com/ad.js?s=3561412&amp;z=160x600">
+			</script>
+			<!-- END SMOWTION TAG - 160x600 - DO NOT MODIFY -->
+		</div>
+	</div>
+
+	<div class="c2">
+		<h2>Obtener el Favicon de un sitio web</h2>
+
+		<section id="working">
+			<h3>Funcionamiento</h3>
+
+			<p>
+				Esta herramienta te permite obtener el icono de identificación de un sitio web o también llamado <b>favicon</b> haciendo una simple petición al servicio almacenado localmente.
+			</p>
+
+			<p>
+				La ventaja de esta herramienta es que puedes obtener de forma sencilla y rápida el icono de cualquier sitio sin modulos pesados ni edición de código en tu servidor.
+			</p>
+		</section>
+
+		<section id="ideas">
+			<h3>Ideas de uso</h3>
+
+			<p>
+				Esta herramienta puede ser perfecta para mostrar los iconos de tus sitios web en un tipo de portafolio o para usarlo en el código CSS de tu aplicación para mostrar los iconos de las redes sociales o sitios web populares.
+			</p>
+
+			<p>
+				InfoSmart usa esta tecnología en su página de <a href="http://www.infosmart.mx/about/products" target="_blank">productos</a>.
+			</p>
+		</section>
+
+		<section id="params">
+			<h3>Parámetros</h3>
+
+			<p>
+				Dirección web base a solicitar:
+			</p>
+
+			<div class="step info cc">
+				%PATH%/to/favicon
+			</div>
+
+			<p>
+				A partir de la dirección web (mostrada justo arriba) puedes agregar los siguientes parámetros:
+			</p>
+
+			<ul>
+				<li>
+					<strong>url</strong> Dirección web del sitio a obtener su icono. <i>(Obligatorio)</i>
+				</li>
+				<li>
+					<strong>download</strong> Si su valor se encuentra en <i>true</i> el icono se descargará al entrar a la dirección web. <i>Predeterminado: false</i>
+				</li>
+				<li>
+					<strong>encode</strong> Si se ajusta su valor puede regresar el icono codificado en Base64 <i>(base64)</i> o MD5 <i>(md5)</i>
+				</li>
+			</ul>
+		</section>
+
+		<section id="examples">
+			<h3>Ejemplos de uso</h3>
+
+			<p>
+				Si quisieramos obtener el <b>favicon</b> de <a href="http://www.facebook.com/">Facebook</a> tendríamos que construir la dirección web:
+			</p>
+
+			<div class="step info cc">
+				%PATH%/to/favicon?url=http://www.facebook.com/
+			</div>
+
+			<div class="step green">
+				<strong>¡Recuerde!</strong> Siempre puede usar la función <code>urlencode()</code> de PHP para codificar una dirección web de la forma correcta.
+			</div>
+
+			<p>
+				Esta dirección nos retornará el icono del sitio "Facebook", nosotros podemos usarla en nuestro sitio de distintas formas, una de ellas es por una simple etiqueta <code>img</code>
+			</p>
+
+			<div class="step info cc">
+				<?=_c('<img src="%PATH%/to/favicon?url=http://www.facebook.com" title="Facebook" />')?>
+			</div>
+
+			<p>
+				Con lo que obtendríamos algo similar a:
+			</p>
+
+			<img src="%PATH%/to/favicon?url=http://www.facebook.com/" title="Facebook" />
+		</section>
+
+		<section id="notes">
+			<h3>Notas</h3>
+
+			<p>
+				Esta herramienta tiene ajustada la cabecera <b>Access-Control-Allow-Origin</b> para admitir cualquier origen. Puede usarla en peticiones a través de AJAX (Por ejemplo).
+			</p>
+		</section>
+	</div>
+</div>

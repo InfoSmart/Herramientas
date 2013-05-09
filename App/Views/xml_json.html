@@ -1,0 +1,156 @@
+<div class="content">
+	<div class="c1">
+		<nav>
+			<a href="#working">Funcionamiento</a>
+			<a href="#ideas">Ideas de uso</a>
+			<a href="#params">Parámetros</a>
+			<a href="#examples">Ejemplos de uso</a>
+			<a href="#php">Usándolo en PHP</a>
+			<a href="#ajax">Usándolo en jQuery (AJAX)</a>
+		</nav>
+
+		<div class="center" style="margin-top: 30px">
+			{$twitter}
+		</div>
+
+		<div class="center" style="margin-top: 30px">
+			<!-- BEGIN SMOWTION TAG - 160x600 - DO NOT MODIFY -->
+			<script type="text/javascript"><!--
+			smowtion_size = "160x600";
+			smowtion_section = "3561412";
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://ads.smowtion.com/ad.js?s=3561412&amp;z=160x600">
+			</script>
+			<!-- END SMOWTION TAG - 160x600 - DO NOT MODIFY -->
+		</div>
+	</div>
+
+	<div class="c2">
+		<h2>Transformando XML a JSON.</h2>
+
+		<section id="working">
+			<h3>Funcionamiento</h3>
+
+			<p>
+				Esta herramienta te permite transformar un archivo/dirección XML a formato JSON haciendo una simple petición al servicio almacenado localmente.
+			</p>
+
+			<p>
+				La ventaja de esta herramienta es que puedes obtener de forma sencilla y rápida el contenido JSON de un archivo o dirección web en XML sin modulos pesados ni edición de código en tu servidor.
+			</p>
+		</section>
+
+		<section id="ideas">
+			<h3>Ideas de uso</h3>
+
+			<p>
+				Esta herramienta puede ser perfecta para obtener Feeds de noticias en XML y transformarlas a JSON para su fácil manipulación en lenguajes como PHP o JavaScript.
+			</p>
+
+			<p>
+				InfoSmart usa esta tecnología en el Slide de noticias en la página <a href="http://infosmart.mx/" target="_blank">principal</a>.
+			</p>
+		</section>
+
+		<section id="params">
+			<h3>Parámetros</h3>
+
+			<p>
+				Dirección web base a solicitar:
+			</p>
+
+			<div class="step info cc">
+				%PATH%/to/xml_json
+			</div>
+
+			<p>
+				A partir de la dirección web (mostrada justo arriba) puedes agregar los siguientes parámetros:
+			</p>
+
+			<ul>
+				<li>
+					<strong>url</strong> Dirección web del sitio XML. <i>(Obligatorio)</i>
+				</li>
+				<li>
+					<strong>entities</strong> Si su valor se encuentra en <i>true</i> el contenido del JSON será codificado en HTML ENTITIES. <i>Predeterminado: true</i>
+				</li>
+				<li>
+					<strong>attr</strong> Si su valor se encuentra en <i>true</i> devolverá los atributos originales del XML. <i>Predeterminado: false</i>
+				</li>
+				<li>
+					<strong>download</strong> Si su valor se encuentra en <i>true</i> se descargará un archivo <b>.json</b> al entrar a la dirección web. <i>Predeterminado: false</i>
+				</li>
+			</ul>
+		</section>
+
+		<section id="examples">
+			<h3>Ejemplos de uso</h3>
+
+			<p>
+				Si quisieramos obtener el Feed de noticias de la página oficial de <a href="http://www.facebook.com/infosmart.science" target="_blank">InfoSmart en Facebook</a> cuya dirección es: <a href="http://www.facebook.com/feeds/page.php?id=198535463518651&format=rss20" target="_blank">http://www.facebook.com/feeds/page.php?id=198535463518651&format=rss20</a> tendríamos que construir la dirección web:
+			</p>
+
+			<div class="step info cc">
+				%PATH%/to/xml_json?url=<?=urlencode('http://www.facebook.com/feeds/page.php?id=198535463518651&format=rss20')?>
+			</div>
+
+			<div class="step green">
+				<strong>¡Recuerde!</strong> Siempre puede usar la función <code>urlencode()</code> de PHP para codificar una dirección web de la forma correcta.
+			</div>
+
+			<p>
+				Esta dirección nos retornará el código transformado del XML a JSON listo para usarse en cualquier lenguaje de programación.
+			</p>
+		</section>
+
+		<section id="php">
+			<h3>Usándolo en PHP</h3>
+
+			<p>
+				Dentro de PHP existe una función llamada <code>json_decode</code> que podemos usar para convertir una cadena de <b>JSON a Array</b> para poder manipular su información de forma sencilla.
+			</p>
+
+			<p>
+				A continuación se muestra un ejemplo de como usar esta herramienta en PHP:
+			</p>
+
+			<div class="step info cc">
+				<?=$geshi->parse_code()?>
+			</div>
+
+			<p>
+				Ahora puedes ver el ejemplo anterior funcionando:
+			</p>
+
+			<iframe src="%PATH%/examples/xml1.php" frameborder="0" style="width: 100%; height: 200px"></iframe>
+		</section>
+
+		<section id="ajax">
+			<h3>Usándolo en jQuery (AJAX)</h3>
+
+			<p>
+				Esta herramienta tiene ajustada la cabecera <b>Access-Control-Allow-Origin</b> para admitir cualquier origen, por lo tanto usted puede usarla desde JavaScript o jQuery con AJAX sin preocuparse de los protocolos de seguridad <b>Cross-Domain</b> o de hacer un Proxy falso.
+			</p>
+
+			<p>
+				A continuación se muestra un ejemplo de como usar esta herramienta en jQuery y AJAX:
+			</p>
+
+			<div class="step info cc">
+				<?=$geshi2->parse_code()?>
+			</div>
+
+			<p>
+				Ahora puedes ver el ejemplo en acción:
+			</p>
+
+			<input type="button" id="get_news" value="Bóton con ID get_news" style="padding: 10px" />
+
+			<div id="news" style="padding: 10px; border: 1px solid #D8D8D8; margin: 10px 0;">
+				Un DIV con ID "news"
+			</div>
+		</section>
+	</div>
+</div>

@@ -1,0 +1,137 @@
+<div class="content">
+	<div class="c1">
+		<nav>
+			<a href="#working">Funcionamiento</a>
+			<a href="#ideas">Ideas de uso</a>
+			<a href="#params">Parámetros</a>
+			<a href="#examples">Ejemplos de uso</a>
+			<a href="#notes">Notas</a>
+			<a href="#beatrock">Úsalo en BeatRock</a>
+		</nav>
+
+		<div class="center" style="margin-top: 30px">
+			{$twitter}
+		</div>
+
+		<div class="center" style="margin-top: 30px">
+			<!-- BEGIN SMOWTION TAG - 160x600 - DO NOT MODIFY -->
+			<script type="text/javascript"><!--
+			smowtion_size = "160x600";
+			smowtion_section = "3561412";
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://ads.smowtion.com/ad.js?s=3561412&amp;z=160x600">
+			</script>
+			<!-- END SMOWTION TAG - 160x600 - DO NOT MODIFY -->
+		</div>
+	</div>
+
+	<div class="c2">
+		<h2>Tomar un pantallazo a la web</h2>
+
+		<section id="working">
+			<h3>Funcionamiento</h3>
+
+			<p>
+				Esta herramienta te permite obtener la imagen de una simulación por navegador web o también llamado <b>pantallazo</b> de un sitio web.
+			</p>
+
+			<p>
+				La ventaja de esta herramienta es que puedes obtener de forma sencilla y rápida la imagen/pantallazo actualizada de cualquier sitio sin modulos pesados ni edición de código en tu servidor.
+			</p>
+		</section>
+
+		<section id="ideas">
+			<h3>Ideas de uso</h3>
+
+			<p>
+				Esta herramienta puede ser ideal para mostrar una previa de cualquier sitio web tuyo o que haya sido registrado dentro de tu aplicación (por ejemplo: blogs o sitios patrocinados)
+			</p>
+		</section>
+
+		<section id="params">
+			<h3>Parámetros</h3>
+
+			<p>
+				Dirección web base a solicitar:
+			</p>
+
+			<div class="step info cc">
+				%PATH%/to/screenshot
+			</div>
+
+			<p>
+				A partir de la dirección web (mostrada justo arriba) puedes agregar los siguientes parámetros:
+			</p>
+
+			<ul>
+				<li>
+					<strong>url</strong> Dirección web del sitio a obtener su pantallazo. <i>(Obligatorio)</i>
+				</li>
+				<li>
+					<strong>width</strong> Ancho del pantallazo. (La altura se calculará automáticamente) <i>Predeterminado: 300</i>
+				</li>
+				<div class="step alert">
+					<strong>Bug</strong>. Cambiar este parámetro puede ocasionar un error en ciertos sitios o sencillamente no hacer nada.
+				</div>
+				<li>
+					<strong>persistent</strong> Si su valor se encuentra en <i>true</i> se esperará hasta que el pantallazo se encuentre listo, de otra manera se mostrará una imagen de "Cargando...". <i>Predeterminado: true</i>
+				</li>
+				<li>
+					<strong>download</strong> Si su valor se encuentra en <i>true</i> el pantallazo se descargará al entrar a la dirección web. <i>Predeterminado: false</i>
+				</li>
+			</ul>
+		</section>
+
+		<section id="examples">
+			<h3>Ejemplos de uso</h3>
+
+			<p>
+				Si quisieramos obtener el <b>pantallazo</b> de <a href="http://www.facebook.com/">Facebook</a> tendríamos que construir la dirección web:
+			</p>
+
+			<div class="step info cc">
+				%PATH%/to/screenshot?url=http://www.facebook.com/
+			</div>
+
+			<div class="step green">
+				<strong>¡Recuerde!</strong> Siempre puede usar la función <code>urlencode()</code> de PHP para codificar una dirección web de la forma correcta.
+			</div>
+
+			<p>
+				Esta dirección nos retornará el pantallazo con formato <b>PNG</b> del sitio "Facebook", nosotros podemos usarla en nuestro sitio de distintas formas, una de ellas es por una simple etiqueta <code>img</code>
+			</p>
+
+			<div class="step info cc">
+				<?=_c('<img src="%PATH%/to/screenshot?url=http://www.facebook.com/" title="Facebook" />')?>
+			</div>
+
+			<p>
+				Con lo que obtendríamos algo similar a:
+			</p>
+
+			<img src="%PATH%/to/screenshot?url=http://www.facebook.com/" title="Facebook" />
+		</section>
+
+		<section id="notes">
+			<h3>Notas</h3>
+
+			<p>
+				Esta herramienta tiene ajustada la cabecera <b>Access-Control-Allow-Origin</b> para admitir cualquier origen. Puede usarla en peticiones a través de AJAX (Por ejemplo).
+			</p>
+		</section>
+
+		<section id="beatrock">
+			<h3>Úsalo en BeatRock</h3>
+
+			<p>
+				Esta herramienta puede usarse fácilmente con la función <code>Gd::SnapshotWeb</code> de nuestro Framework en PHP.
+			</p>
+
+			<p>
+				Conoce ahora mismo <a href="http://beatrock.infosmart.mx/" target="_blank">BeatRock</a> y desarrolla una nueva web.
+			</p>
+		</section>
+	</div>
+</div>
