@@ -1,0 +1,37 @@
+// Inicialización en jQuery.
+$(document).on('ready', function()
+{
+	// Boton con ID "get_news"
+	$('#get_news').on('click', GetNews);
+});
+
+function GetNews()
+{
+	$('#news').html('Cargando...');
+
+	$.get('{PATH}/to/xml_json', {'url': 'http%3A%2F%2Fwww.facebook.com%2Ffeeds%2Fpage.php%3Fid%3D198535463518651%26format%3Drss20'}, function(result)
+	{
+		// Imprimir los resultados en la consola.
+		console.log(result);
+
+		// Limpiar DIV para el Feed.
+		$('#news').html('');
+
+		// ¿Bug?
+		if(result.rss == undefined)
+			alert('¡Ha ocurrido un error!');
+
+		// Ahora tengo las noticias en una variable más sencilla.
+		Items = result.rss.channel.item;
+
+		// Imprimir cada noticia dentro del DIV con ID "news"
+		for(i in Items)
+		{
+			if(Items[i].title == '' || Items[i].title == undefined)
+				continue;
+
+			$('#news').append('Titulo de la noticia: <a href="' + Items[i].link + '" target="_blank">' + Items[i].title + '</a><br />');
+		}
+
+	}, 'JSON');
+}

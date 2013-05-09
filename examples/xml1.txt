@@ -1,0 +1,23 @@
+// Página en RSS
+$url = 'http://www.facebook.com/feeds/page.php?id=198535463518651&format=rss20';
+// Codificando
+$url = urlencode($url);
+
+// Transformando RSS a JSON
+$data = file_get_contents('{PATH}/to/xml_json?url=' . $url);
+// Transformando JSON a Array
+$data = json_decode($data, true);
+// Ir directamente a las noticias.
+$data = $data['rss']['channel'];
+
+// Mostrando los datos obtenidos...
+// Esto a nuestro gusto claro.
+
+foreach($data as $row)
+{
+	// El titulo esta vacio, se trata de un link o algo sin importancia.
+	if(empty($row['title']))
+		continue;
+
+	echo 'Titulo de la noticia: <a>' . $data['title'], '<br />';
+}
